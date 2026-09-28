@@ -11,7 +11,7 @@ canvas.addEventListener("mousedown",()=>mouse.down=true);addEventListener("mouse
 
 const rand=(a,b)=>Math.random()*(b-a)+a, pick=a=>a[Math.floor(Math.random()*a.length)];
 let state="menu",last=0,timeAlive=0,wave=1,kills=0,spawnTimer=0,waveKills=0,shake=0,level=1,xp=0,xpNeed=50;
-let player,enemies=[],particles=[],slashes=[],projectiles=[],floats=[],stars=[];
+let player={x:innerWidth/2,y:innerHeight/2,r:18,hp:100,maxHp:100,speed:235,damage:28,attackCd:0,attackRate:.34,range:78,dashCd:0,dashMax:1.3,special:0,level:1,crit:.08,regen:0,inv:0},enemies=[],particles=[],slashes=[],projectiles=[],floats=[],stars=[];
 let best=JSON.parse(localStorage.getItem("shadowArenaBest")||'{"wave":0,"kills":0,"time":0}');
 for(let i=0;i<180;i++)stars.push({x:Math.random(),y:Math.random(),s:Math.random()*2+.3,a:Math.random()*.6+.15});
 
@@ -109,7 +109,7 @@ function draw(){
  for(const f of floats){ctx.globalAlpha=f.life;ctx.fillStyle="#fff";ctx.font="bold 14px Arial";ctx.textAlign="center";ctx.fillText(f.t,f.x,f.y)}ctx.restore();
  if(msgTimer>0){msgTimer-=.016;if(msgTimer<=0)$("message").style.opacity=0}
 }
-function drawPlayer(){let p=player;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(Math.atan2(mouse.y-p.y,mouse.x-p.x));ctx.globalAlpha=p.inv>0&&Math.floor(p.inv*20)%2===0?.35:1;
+function drawPlayer(){if(!player)return;let p=player;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(Math.atan2(mouse.y-p.y,mouse.x-p.x));ctx.globalAlpha=p.inv>0&&Math.floor(p.inv*20)%2===0?.35:1;
  ctx.shadowBlur=28;ctx.shadowColor="#9d4edd";ctx.fillStyle="#151322";ctx.beginPath();ctx.arc(0,0,p.r,0,7);ctx.fill();ctx.shadowBlur=0;
  ctx.strokeStyle="#b967ff";ctx.lineWidth=3;ctx.stroke();ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(5,-6,3,0,7);ctx.arc(5,6,3,0,7);ctx.fill();
  ctx.strokeStyle="#ddd";ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(12,0);ctx.lineTo(48,0);ctx.stroke();ctx.strokeStyle="#b967ff";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(18,-3);ctx.lineTo(50,-3);ctx.stroke();ctx.restore()}
