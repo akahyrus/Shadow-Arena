@@ -1,26 +1,20 @@
-# Shadow Arena
+# Shadow Arena — Space Combat V4
 
-A browser-based endless 2D action game built with HTML, CSS and JavaScript. No external libraries or assets required.
-
-## Features
-- 4 difficulty modes: Easy, Medium, Hard, Extreme
-- 4 selectable anime-inspired fighters
-- 8 weapons: Katana, Longbow, Blaster, Laser, Twin Blades, Void Scythe, Chakram, Arc Staff
-- Different weapon behavior and stats
-- Next Special charge bar
-- Special ability changes with weapon type
-- Upgrade system: Damage, Crit, Range, Size, Attack Speed, HP, Move Speed, Special Power
-- Enemy variety + boss every 5 waves
-- Particles, glow, hit effects and screen shake
-- Endless waves
-- Keyboard + mouse controls
+Endless top-down browser arena with astronaut characters, space mobs, ships, drones, asteroids and mothership bosses.
 
 ## Controls
-WASD / Arrow Keys = Move
-Mouse = Aim
-Hold Left Click = Attack
-Space = Dash
-E = Special
+- WASD / Arrow Keys — Move
+- Mouse — Aim
+- Left Click — Attack
+- Shift — Dash
+- Space — Character Special
+- 1 / 2 / 3 — Select level-up upgrade
 
-## GitHub Pages
-Upload the four project files to the repository root and enable Settings → Pages → Deploy from branch → main → root.
+## V4 Highlights
+- 8 visually distinct astronaut characters
+- Every character has a different Special ability
+- Alien astronauts, scout ships, drones, asteroids and mothership boss visuals
+- Distinct weapon audio for Katana, Longbow, Blaster, Laser, Twin Blades, Void Scythe, Chakram and Arc Staff
+- Built-in WebAudio; no external sound files required
+- Music/Sound toggle
+- Existing difficulty, waves, upgrades and gameplay retained
